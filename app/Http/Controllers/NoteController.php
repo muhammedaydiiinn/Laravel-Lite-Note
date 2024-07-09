@@ -44,6 +44,7 @@ class NoteController extends Controller
             ]
         );
 
+
         $note = new Note();
 
         $note->user_id = Auth::user()->id;;
