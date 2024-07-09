@@ -34,13 +34,13 @@ class NoteController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'content' => 'required'
+                'note_content' => 'required'
             ], [
 
                 //custom message
                 // keyadi.kuralAdi => 'Mesaj'
                 'title.required' => 'Başlık boş olamaz!',
-                'content.required' => 'İçerik boş olamaz!',
+                'note_content.required' => 'İçerik boş olamaz!',
             ]
         );
 
