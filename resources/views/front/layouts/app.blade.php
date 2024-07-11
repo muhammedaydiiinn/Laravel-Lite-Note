@@ -9,9 +9,17 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="{{asset('projectPanel/assets/favicon.ico')}}"/>
     <title>LiteNotes</title>
+    <style>
+        .mt-navbar {
+            margin-top: 76px; /* Adjust this value according to the height of your navbar */
+        }
+        body{
+            background: #c2c2c2;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary px-5" data-bs-theme="dark">
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary px-5 fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('notes.index') }}">LiteNotes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,7 +47,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                               <li>
+                        <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
@@ -63,7 +71,7 @@
     </div>
 </nav>
 
-<div class="container mt-3">
+<div class="container mt-navbar">
     @yield('content')
 </div>
 

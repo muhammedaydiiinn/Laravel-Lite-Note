@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [NoteController::class, 'index'])->name('notes.index');
-Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
-Route::get('/notes/createPage', [NoteController::class, 'createPage'])->name('notes.createPage');
-Route::post('/notes/addNote', [NoteController::class, 'addNote'])->name('notes.addNote');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,9 +22,15 @@ Route::middleware([
 ])->group(function () {
     Route::get('/', [NoteController::class, 'index'])->name('notes.index');
     Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
+    Route::get('/notes/createPage', [NoteController::class, 'createPage'])->name('notes.createPage');
+    Route::post('/notes/addNote', [NoteController::class, 'addNote'])->name('notes.addNote');
+    Route::get('/notes/detail/{note_id}', [NoteController::class, 'detail'])->name('notes.detail');
+    Route::get('/notes/editPage/{id}', [NoteController::class, 'editPage'])->name('notes.editPage');
+    Route::post('/notes/update/{id}', [NoteController::class, 'update'])->name('notes.update');
+    Route::delete('/notes/destroy/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
+
 });
-//// TEST ROUTELARI BAŞLANGIÇ
+
 Route::get('/test', function () {
     return view('front.layouts.app');
 });
-//// TEST ROUTELARI BİTİŞ
